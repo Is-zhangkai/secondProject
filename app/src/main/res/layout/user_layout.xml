@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UserActivity"
+    android:orientation="vertical">
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/btn_user_back"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="12dp"
+            android:background="@drawable/back"/>
+
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp">
+        <Button
+            android:id="@+id/user_photo"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerInParent="true"
+            android:background="@drawable/user0"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="zhangkai"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+           android:layout_below="@id/user_photo"
+            android:gravity="center"/>
+    </RelativeLayout>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="button"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        android:gravity="center_vertical|left"
+        android:paddingStart="24dp"
+        tools:ignore="RtlHardcoded,RtlSymmetry"
+        android:background="@drawable/box"/>
+
+
+
+</LinearLayout>

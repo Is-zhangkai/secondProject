@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="UselessParent">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="6dp"
+            android:layout_marginStart="6dp"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="12"
+                android:textColor="@color/gray_50"
+                android:textStyle="bold"
+                android:textSize="21sp"
+                />
+            <TextView
+                android:id="@+id/month"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="十一月"
+                android:textColor="@color/gray_50"
+                android:textSize="14sp"
+                android:layout_marginBottom="6dp"/>
+        </LinearLayout>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/gray_10"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="6dp"/>
+
+        <TextView
+            android:id="@+id/topWord"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:letterSpacing="0.3"
+            android:layout_weight="1"
+            android:gravity="center_vertical|left"
+            android:text="晚上好！"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="22sp"
+
+            tools:ignore="RtlHardcoded" />
+
+        <Button
+            android:id="@+id/btn_user"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_gravity="center"
+            android:layout_marginEnd="12dp"
+            android:background="@drawable/user0"/>
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#DCDCDC"/>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/srl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <com.scwang.smartrefresh.header.MaterialHeader
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+
+    <androidx.recyclerview.widget.RecyclerView
+    android:id="@+id/recyclerview"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" />
+
+
+</com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+</LinearLayout>
+</LinearLayout>
