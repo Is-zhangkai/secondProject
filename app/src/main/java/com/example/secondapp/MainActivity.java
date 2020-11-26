@@ -176,11 +176,17 @@ public class MainActivity extends AppCompatActivity {
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            AlertDialog response=new AlertDialog.Builder(MainActivity.this)
-                                    .setTitle("错误")
-                                    .setMessage("未连接网络")
-                                    .create();
-                            response.show();
+                            News error=new News();
+                            error.setError("error");
+                            news.add(error);
+                            adapter=new NewsListAdapter(MainActivity.this,news);
+                            recyclerView.setAdapter(adapter);
+
+//                            AlertDialog response=new AlertDialog.Builder(MainActivity.this)
+//                                    .setTitle("错误")
+//                                    .setMessage("未连接网络")
+//                                    .create();
+//                            response.show();
                         }
                     });
                 }
@@ -192,11 +198,17 @@ public class MainActivity extends AppCompatActivity {
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        AlertDialog response=new AlertDialog.Builder(MainActivity.this)
-                                .setTitle("错误")
-                                .setMessage("未连接网络")
-                                .create();
-                        response.show();
+//                        AlertDialog response=new AlertDialog.Builder(MainActivity.this)
+//                                .setTitle("错误")
+//                                .setMessage("未连接网络")
+//                                .create();
+//                        response.show();
+                        News error=new News();
+                        error.setError("error");
+                        news.add(error);
+                        adapter=new NewsListAdapter(MainActivity.this,news);
+                        recyclerView.setAdapter(adapter);
+
                     }
                 });
 

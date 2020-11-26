@@ -27,6 +27,7 @@ public class News {
     private String url;
     private String date;
     private List<News> list;
+    private  String error;
 
 
 
@@ -108,5 +109,14 @@ public class News {
 
     public List<News> getList() {
         return list;
+    }
+
+
+    public void setError(String error) {
+        this.error = error;
+    }
+
+    public String getError() {
+        return error;
     }
 }

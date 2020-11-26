@@ -29,6 +29,7 @@ public class NewsListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     private static final int ITEM_NEWS =1 ;
     private static final int ITEM_DATE =2 ;
     private static final int ITEN_VIEW =3 ;
+    private static final int ITEM_ERROR =4;
     private Context context;
     private List<News> news;
     private  PagerHolder pagerHolder;
@@ -56,6 +57,8 @@ public class NewsListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         View view_news=null;
         RecyclerView.ViewHolder holder = null;
+        if (i==ITEM_ERROR){ view_news= LayoutInflater.from(context).inflate(R.layout.item_error,viewGroup,false);
+            holder= new ErrorHolder(view_news);}
         if (i==ITEN_VIEW){
             view_news= LayoutInflater.from(context).inflate(R.layout.item_news_viewpager,viewGroup,false);
             holder= new PagerHolder(view_news);
@@ -106,21 +109,22 @@ public class NewsListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
 
             viewPagerAdapter = new ViewPagerAdapter(context, news0);
-//            ViewGroup.LayoutParams layoutParams = ((ViewHolderView)holder).viewPager.getLayoutParams();
-//            layoutParams.height=300;
-//            ((ViewHolderView)holder).viewPager.setLayoutParams(layoutParams);
+
             pagerHolder.viewPager2.setAdapter(viewPagerAdapter);
             viewPagerAdapter.notifyDataSetChanged();
       }
-        if (holder instanceof ViewHolderDate){ ((ViewHolderDate)holder).date.setText(Objects.requireNonNull(news.get(i).getDate())); }
-
+        if (holder instanceof ViewHolderDate){
+            ((ViewHolderDate)holder).date.setText(Objects.requireNonNull(news.get(i).getDate())); }
     }
+
 
     @Override
     public int getItemViewType(int i) {
 
-
-        if (news.get(i).getList()!=null){
+       if (news.get(i).getError()!=null){
+           return ITEM_ERROR;
+       }
+        else if (news.get(i).getList()!=null){
             return ITEN_VIEW;
         } else if (news.get(i).getDate()==null) {
             return ITEM_NEWS;
@@ -157,15 +161,12 @@ public class NewsListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         }
     }
 
-//    public static class ViewHolderView extends RecyclerView.ViewHolder {
-//
-//
-//        ViewPager2 viewPager;
-//        public ViewHolderView(@NonNull View itemView) {
-//            super(itemView);
-//            viewPager=itemView.findViewById(R.id.viewPager);
-//
-//        }
-//    }
+    public static class ErrorHolder extends RecyclerView.ViewHolder {
+
+        public ErrorHolder(@NonNull View itemView) {
+            super(itemView);
+
+        }
+    }
 
 }
