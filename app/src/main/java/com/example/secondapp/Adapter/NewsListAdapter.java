@@ -169,4 +169,16 @@ public class NewsListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         }
     }
 
+
+
+    public class PagerHolder extends RecyclerView.ViewHolder {
+
+        public ViewPager2 viewPager2;
+        public RelativeLayout relativeLayout;
+        public PagerHolder(@NonNull View itemView) {
+            super(itemView);
+            viewPager2=itemView.findViewById(R.id.viewPager);
+            relativeLayout=itemView.findViewById(R.id.r_layout);
+
+        }}
 }

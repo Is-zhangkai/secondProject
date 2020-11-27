@@ -32,7 +32,6 @@ public class CommentAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
 
     public void addComments(List<Comments> dataUpdate){
         if (dataUpdate != null) {
-
             comments.addAll(dataUpdate);
             notifyItemChanged(comments.size() - dataUpdate.size(), dataUpdate.size());
         }
@@ -49,7 +48,6 @@ public class CommentAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             ((ViewHolderComments)holder).date.setText(comments.get(i).getTime() +"");
             ((ViewHolderComments)holder).number.setText(comments.get(i).getLikes() +"");
         final boolean[] flag = {true};
-
         //点赞按钮
             ((ViewHolderComments)holder).like.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -64,7 +62,8 @@ public class CommentAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
                     ((ViewHolderComments)holder).number.setText(comments.get(i).getLikes()+"");
                     ((ViewHolderComments)holder).like.setBackgroundResource(R.drawable.good_f);}
             }
-        });}else if (holder instanceof ViewHolderNumber){
+        });}
+        else if (holder instanceof ViewHolderNumber){
             ((ViewHolderNumber)holder).number.setText(Objects.requireNonNull(comments.get(i).getNumber()));
         }
 
