@@ -39,13 +39,13 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text=""
-                android:padding="2dp"
+                android:padding="3dp"
                 android:gravity="center_vertical"
                 android:textColor="@color/black"
                 android:textSize="14sp"
                 android:textStyle="bold"
                 android:layout_weight="1"
-                android:layout_marginBottom="3dp"
+                android:layout_marginBottom="2dp"
                 />
             <Button
                 android:layout_width="16dp"
