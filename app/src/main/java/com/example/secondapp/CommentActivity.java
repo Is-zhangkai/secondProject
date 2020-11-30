@@ -35,7 +35,7 @@ import java.util.List;
 
 public class CommentActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
-    private List<Comments> comments = new ArrayList<>();
+
     private TextView textView0;
     private String long_data;
     private int longNumber;
@@ -63,8 +63,8 @@ public class CommentActivity extends AppCompatActivity {
         longNumber = intent_get.getIntExtra("longNumber", 0);
         shortNumber = intent_get.getIntExtra("shortNumber", 0);
 
-
-        GetComments();
+        List<Comments> comments = new ArrayList<>();
+        GetComments(comments);
         textView0.setText(longNumber + shortNumber + "条评论");
 
 
@@ -79,7 +79,8 @@ public class CommentActivity extends AppCompatActivity {
         refreshLayout.setOnRefreshListener(new OnRefreshListener() {
             @Override
             public void onRefresh(@NonNull RefreshLayout refreshLayout) {
-                GetComments();
+                List<Comments> comments = new ArrayList<>();
+                GetComments(comments);
                 textView0.setText(longNumber + shortNumber + "条评论");
                 refreshLayout.finishRefresh();
             }
@@ -111,7 +112,7 @@ public class CommentActivity extends AppCompatActivity {
     }
 
 
-    public void GetComments() {
+    public void GetComments(final List<Comments> comments ) {
         //如果有长评
         if (longNumber != 0 && long_data != null) {
 
