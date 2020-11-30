@@ -4,19 +4,14 @@ package com.example.secondapp.Adapter;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Adapter;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.viewpager2.widget.ViewPager2;
 
 import com.bumptech.glide.Glide;
 import com.example.secondapp.Data.News;
@@ -33,7 +28,6 @@ public class ViewPagerAdapter extends RecyclerView.Adapter<ViewPagerAdapter.View
         public ViewPagerAdapter(Context context, List<News> news) {
             this.context=context;
             this.news=news;
-           // ImageLoader.getInstance().init(ImageLoaderConfiguration.createDefault(context));
         }
 
     @NonNull

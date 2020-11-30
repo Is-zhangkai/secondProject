@@ -168,7 +168,7 @@ public class CommentActivity extends AppCompatActivity {
     //时间戳
     public static String ToDate(long s) {
         String res;
-        @SuppressLint("SimpleDateFormat") SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+        @SuppressLint("SimpleDateFormat") SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
         Date date = new Date(s);
         res = simpleDateFormat.format(date);
